@@ -9,14 +9,27 @@ Commands were used on a Windows machine running PowerShell.
 ```shell
 py -m venv .venv
 .venv\Scripts\Activate
+py -m pip install -r "requirements.txt"
 ```
 
-# Git Add / Commit / Push 
+# Freeze Requirements
+
+```shell
+py -m pip freeze > requirements.txt
+```
+
+# Git Add / Commit / Push
 
 ```shell
 git add .
 git commit -m "add .gitignore, commands to README.md"
 git push -u origin main
+```
+
+# Git Pull
+
+```
+git pull
 ```
 
 # Specification
