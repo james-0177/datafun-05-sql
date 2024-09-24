@@ -9,13 +9,6 @@ Commands were used on a Windows machine running PowerShell.
 ```shell
 py -m venv .venv
 .venv\Scripts\Activate
-py -m pip install -r "requirements.txt"
-```
-
-# Freeze Requirements
-
-```shell
-py -m pip freeze > requirements.txt
 ```
 
 # Git Add / Commit / Push 
