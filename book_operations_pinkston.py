@@ -28,7 +28,6 @@ def execute_sql_from_file(db_filepath, sql_file):
 
 def main():
 
-    logging.info("Program started")
     sql_file = [
         sql_file_path.joinpath("insert_records.sql"),
         sql_file_path.joinpath("insert_books.sql"),
@@ -43,9 +42,6 @@ def main():
 
     # Perform SQL operations on database
     execute_sql_from_file(db_file_path, sql_file)  
-
-    logging.info("All SQL operations completed successfully")
-    logging.info("Program ended")
 
 # Conditionally execute the main() function if this is the script being run
 if __name__ == "__main__":
