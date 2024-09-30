@@ -87,8 +87,8 @@ def execute_sql_qjoin(db_filepath, sql_file_qjoin):
 
 
 def main():
+    
     logging.info("Program started")
-    ...
 
     # Perform SQL operations on database
     execute_sql_insert(db_filepath, sql_file_insert)
