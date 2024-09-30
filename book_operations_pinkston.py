@@ -28,7 +28,7 @@ def execute_sql_from_file(db_filepath, sql_file):
 
 def main():
 
-    sql_file = [
+    sql_files = [
         sql_file_path.joinpath("insert_records.sql"),
         sql_file_path.joinpath("insert_books.sql"),
         sql_file_path.joinpath("update_records.sql"),
@@ -41,7 +41,8 @@ def main():
     ]
 
     # Perform SQL operations on database
-    execute_sql_from_file(db_file_path, sql_file)  
+    for sql_file in sql_files:
+        execute_sql_from_file(db_file_path, sql_file)  
 
 # Conditionally execute the main() function if this is the script being run
 if __name__ == "__main__":
