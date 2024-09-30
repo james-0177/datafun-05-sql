@@ -12,6 +12,7 @@ logging.basicConfig(filename='log.txt', level=logging.DEBUG, filemode='a', forma
 # Define paths using joinpath
 db_filepath = pathlib.Path("project.db")
 sql_file_insert = pathlib.Path("sql").joinpath("insert_records.sql")
+sql_file_insert_books = pathlib.Path("sql").joinpath("insert_books.sql")
 sql_file_update = pathlib.Path("sql").joinpath("update_records.sql")
 sql_file_delete = pathlib.Path("sql").joinpath("delete_records.sql")
 sql_file_qagg = pathlib.Path("sql").joinpath("query_aggregation.sql")
@@ -28,6 +29,13 @@ def execute_sql_insert(db_filepath, sql_file_insert):
             sql_script = file.read()
         conn.executescript(sql_script)
         print(f"Executed SQL from {sql_file_insert}")
+
+def execute_sql_insert_books(db_filepath, sql_file_insert_books):
+    with sqlite3.connect(db_filepath) as conn:
+        with open(sql_file_insert_books, 'r') as file:
+            sql_script = file.read()
+        conn.executescript(sql_script)
+        print(f"Executed SQL from {sql_file_insert_books}")
 
 # Update records
 def execute_sql_update(db_filepath, sql_file_update):
@@ -87,11 +95,12 @@ def execute_sql_qjoin(db_filepath, sql_file_qjoin):
 
 
 def main():
-    
+
     logging.info("Program started")
 
     # Perform SQL operations on database
     execute_sql_insert(db_filepath, sql_file_insert)
+    execute_sql_insert_books(db_filepath, sql_file_insert_books)
     execute_sql_update(db_filepath, sql_file_update)
     execute_sql_delete(db_filepath, sql_file_delete)
     execute_sql_qagg(db_filepath, sql_file_qagg)
