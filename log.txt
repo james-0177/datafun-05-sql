@@ -19,3 +19,12 @@
 2024-09-29 23:28:50,142 - ERROR - Error executing SQL from sql\query_sorting.sql: near "BY": syntax error
 2024-09-29 23:28:50,143 - INFO - Executed SQL from sql\query_group.sql
 2024-09-29 23:28:50,143 - INFO - Executed SQL from sql\query_join.sql
+2024-09-29 23:32:03,379 - INFO - Executed SQL from sql\insert_records.sql
+2024-09-29 23:32:03,386 - INFO - Executed SQL from sql\insert_books.sql
+2024-09-29 23:32:03,395 - INFO - Executed SQL from sql\update_records.sql
+2024-09-29 23:32:03,402 - INFO - Executed SQL from sql\delete_records.sql
+2024-09-29 23:32:03,404 - INFO - Executed SQL from sql\query_aggregation.sql
+2024-09-29 23:32:03,405 - INFO - Executed SQL from sql\query_filter.sql
+2024-09-29 23:32:03,406 - INFO - Executed SQL from sql\query_sorting.sql
+2024-09-29 23:32:03,407 - INFO - Executed SQL from sql\query_group.sql
+2024-09-29 23:32:03,408 - INFO - Executed SQL from sql\query_join.sql
