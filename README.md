@@ -26,6 +26,21 @@ git commit -m "add .gitignore, commands to README.md"
 git push -u origin main
 ```
 
+# Created database
+```shell
+git add.
+git commit -m "created database"
+git push -u origin main
+```
+
+# Created SQL files and operation python file to integrate SQL scripts
+```shell
+git add.
+git commit -m "created SQL script files and operation python file"
+git push -u origin main
+```
+
+
 # Git Pull
 
 ```
