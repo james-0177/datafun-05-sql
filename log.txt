@@ -1,3 +1,12 @@
 2024-09-29 22:47:21,834 - INFO - Program started
 2024-09-29 22:58:43,521 - INFO - Program started
 2024-09-29 23:21:23,998 - INFO - Program started
+2024-09-29 23:25:41,996 - INFO - Executed SQL from sql\insert_records.sql
+2024-09-29 23:25:41,997 - ERROR - Error executing SQL from sql\insert_books.sql: near "(": syntax error
+2024-09-29 23:25:41,998 - ERROR - Error executing SQL from sql\update_records.sql: no such column: year_publshed
+2024-09-29 23:25:41,999 - INFO - Executed SQL from sql\delete_records.sql
+2024-09-29 23:25:42,000 - INFO - Executed SQL from sql\query_aggregation.sql
+2024-09-29 23:25:42,001 - INFO - Executed SQL from sql\query_filter.sql
+2024-09-29 23:25:42,001 - ERROR - Error executing SQL from sql\query_sorting.sql: near "BY": syntax error
+2024-09-29 23:25:42,003 - INFO - Executed SQL from sql\query_group.sql
+2024-09-29 23:25:42,004 - INFO - Executed SQL from sql\query_join.sql

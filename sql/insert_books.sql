@@ -12,5 +12,5 @@ INSERT INTO books (
           ('c2v9j7q5-1y83-47k2-20lm-5a8p01b64t32','Dune','1965','2j6y3f87-5e1d-4k9a-q3b6-389l74r5x421'),
           ('w7h0r8m1-4j62-59d9-14qa-8l3t07n25y48','Foundation','1951','1c5d7n42-6m8a-2h3e-t4j9-456b82p8r091'),
           ('k9f2a5z7-0x12-45e9-77lq-4t3m08v91y54','Enders Game','1985','7h9k2e84-3n5a-8b1c-f5l6-927s16q4t708'),
-          ('ab3d47g9-1c34-67f8-93jk-8a1b02h65p32','Neuromancer','1984','0g1p4m95-8d6b-2a3c-t9j4-213y87r6k432')
+          ('ab3d47g9-1c34-67f8-93jk-8a1b02h65p32','Neuromancer','1984','0g1p4m95-8d6b-2a3c-t9j4-213y87r6k432'),
           ('ko4f26e4-2b79-54t9-23hh-5a6h07e89r46','Streams of Silver','1989','5d324g58-169d-9c6a-f2l8-428k92p4r348');
