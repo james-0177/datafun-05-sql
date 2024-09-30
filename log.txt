@@ -10,3 +10,12 @@
 2024-09-29 23:25:42,001 - ERROR - Error executing SQL from sql\query_sorting.sql: near "BY": syntax error
 2024-09-29 23:25:42,003 - INFO - Executed SQL from sql\query_group.sql
 2024-09-29 23:25:42,004 - INFO - Executed SQL from sql\query_join.sql
+2024-09-29 23:28:50,123 - INFO - Executed SQL from sql\insert_records.sql
+2024-09-29 23:28:50,131 - INFO - Executed SQL from sql\insert_books.sql
+2024-09-29 23:28:50,132 - ERROR - Error executing SQL from sql\update_records.sql: no such column: last
+2024-09-29 23:28:50,139 - INFO - Executed SQL from sql\delete_records.sql
+2024-09-29 23:28:50,140 - INFO - Executed SQL from sql\query_aggregation.sql
+2024-09-29 23:28:50,141 - INFO - Executed SQL from sql\query_filter.sql
+2024-09-29 23:28:50,142 - ERROR - Error executing SQL from sql\query_sorting.sql: near "BY": syntax error
+2024-09-29 23:28:50,143 - INFO - Executed SQL from sql\query_group.sql
+2024-09-29 23:28:50,143 - INFO - Executed SQL from sql\query_join.sql
