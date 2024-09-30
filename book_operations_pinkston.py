@@ -10,104 +10,39 @@ import pandas as pd
 logging.basicConfig(filename='log.txt', level=logging.DEBUG, filemode='a', format='%(asctime)s - %(levelname)s - %(message)s')
 
 # Define paths using joinpath
-db_filepath = pathlib.Path("project.db")
-sql_file_insert = pathlib.Path("sql").joinpath("insert_records.sql")
-sql_file_insert_books = pathlib.Path("sql").joinpath("insert_books.sql")
-sql_file_update = pathlib.Path("sql").joinpath("update_records.sql")
-sql_file_delete = pathlib.Path("sql").joinpath("delete_records.sql")
-sql_file_qagg = pathlib.Path("sql").joinpath("query_aggregation.sql")
-sql_file_qfilter = pathlib.Path("sql").joinpath("query_filter.sql")
-sql_file_qsort = pathlib.Path("sql").joinpath("query_sorting.sql")
-sql_file_qgroup = pathlib.Path("sql").joinpath("query_group.sql")
-sql_file_qjoin = pathlib.Path("sql").joinpath("query_join.sql")
+db_file_path = pathlib.Path("project.db")
+sql_file_path = pathlib.Path("sql")
 
-
-# Insert records
-def execute_sql_insert(db_filepath, sql_file_insert):
-    with sqlite3.connect(db_filepath) as conn:
-        with open(sql_file_insert, 'r') as file:
-            sql_script = file.read()
-        conn.executescript(sql_script)
-        print(f"Executed SQL from {sql_file_insert}")
-
-def execute_sql_insert_books(db_filepath, sql_file_insert_books):
-    with sqlite3.connect(db_filepath) as conn:
-        with open(sql_file_insert_books, 'r') as file:
-            sql_script = file.read()
-        conn.executescript(sql_script)
-        print(f"Executed SQL from {sql_file_insert_books}")
-
-# Update records
-def execute_sql_update(db_filepath, sql_file_update):
-    with sqlite3.connect(db_filepath) as conn:
-        with open(sql_file_update, 'r') as file:
-            sql_script = file.read()
-        conn.executescript(sql_script)
-        print(f"Executed SQL from {sql_file_update}")
-
-# Delete records
-def execute_sql_delete(db_filepath, sql_file_delete):
-    with sqlite3.connect(db_filepath) as conn:
-        with open(sql_file_delete, 'r') as file:
-            sql_script = file.read()
-        conn.executescript(sql_script)
-        print(f"Executed SQL from {sql_file_delete}")
-
-# Query aggregate
-def execute_sql_qagg(db_filepath, sql_file_qagg):
-    with sqlite3.connect(db_filepath) as conn:
-        with open(sql_file_qagg, 'r') as file:
-            sql_script = file.read()
-        conn.executescript(sql_script)
-        print(f"Executed SQL from {sql_file_qagg}")
-
-# Query filter
-def execute_sql_qfilter(db_filepath, sql_file_qfilter):
-    with sqlite3.connect(db_filepath) as conn:
-        with open(sql_file_qfilter, 'r') as file:
-            sql_script = file.read()
-        conn.executescript(sql_script)
-        print(f"Executed SQL from {sql_file_qfilter}")
-
-# Query sort
-def execute_sql_qsort(db_filepath, sql_file_qsort):
-    with sqlite3.connect(db_filepath) as conn:
-        with open(sql_file_qsort, 'r') as file:
-            sql_script = file.read()
-        conn.executescript(sql_script)
-        print(f"Executed SQL from {sql_file_qsort}")
-
-# Query group
-def execute_sql_qgroup(db_filepath, sql_file_qgroup):
-    with sqlite3.connect(db_filepath) as conn:
-        with open(sql_file_qgroup, 'r') as file:
-            sql_script = file.read()
-        conn.executescript(sql_script)
-        print(f"Executed SQL from {sql_file_qgroup}")
-
-# Query join
-def execute_sql_qjoin(db_filepath, sql_file_qjoin):
-    with sqlite3.connect(db_filepath) as conn:
-        with open(sql_file_qjoin, 'r') as file:
-            sql_script = file.read()
-        conn.executescript(sql_script)
-        print(f"Executed SQL from {sql_file_qjoin}")
-
+def execute_sql_from_file(db_filepath, sql_file):
+    try:
+        with sqlite3.connect(db_filepath) as conn:
+            with open(sql_file, 'r') as file:
+                sql_script = file.read()
+            conn.executescript(sql_script)
+            logging.info(f"Executed SQL from {sql_file}")
+            print(f"Executed SQL from {sql_file}")
+    except (sqlite3.Error, FileNotFoundError) as e:
+        error_message = f"Error executing SQL from {sql_file}: {e}"
+        logging.error(error_message)
+        print(error_message)
 
 def main():
 
     logging.info("Program started")
+    sql_file = [
+        sql_file_path.joinpath("insert_records.sql"),
+        sql_file_path.joinpath("insert_books.sql"),
+        sql_file_path.joinpath("update_records.sql"),
+        sql_file_path.joinpath("delete_records.sql"),
+        sql_file_path.joinpath("query_aggregation.sql"),
+        sql_file_path.joinpath("query_filter.sql"),
+        sql_file_path.joinpath("query_sorting.sql"),
+        sql_file_path.joinpath("query_group.sql"),
+        sql_file_path.joinpath("query_join.sql"),
+    ]
 
     # Perform SQL operations on database
-    execute_sql_insert(db_filepath, sql_file_insert)
-    execute_sql_insert_books(db_filepath, sql_file_insert_books)
-    execute_sql_update(db_filepath, sql_file_update)
-    execute_sql_delete(db_filepath, sql_file_delete)
-    execute_sql_qagg(db_filepath, sql_file_qagg)
-    execute_sql_qfilter(db_filepath, sql_file_qfilter)
-    execute_sql_qsort(db_filepath, sql_file_qsort)
-    execute_sql_qgroup(db_filepath, sql_file_qgroup)
-    execute_sql_qjoin(db_filepath, sql_file_qjoin)  
+    execute_sql_from_file(db_file_path, sql_file)  
 
     logging.info("All SQL operations completed successfully")
     logging.info("Program ended")
